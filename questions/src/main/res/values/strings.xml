@@ -1,0 +1,5 @@
+<resources>
+    <string name="first_question">First question</string>
+    <string name="second_question">Second question</string>
+    <string name="third_question">Third question</string>
+</resources>

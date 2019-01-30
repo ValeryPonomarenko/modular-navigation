@@ -1,0 +1,5 @@
+<resources>
+    <string name="right_answer">Right answer</string>
+    <string name="wrong_answer">Wrong answer</string>
+    <string name="question">Question #%d</string>
+</resources>
