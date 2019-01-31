@@ -36,7 +36,7 @@ class Navigator : QuestionsNavigation, QuestionNavigation, RightAnswerNavigation
         navController?.popBackStack()
     }
 
-    override fun tryAgain(questionId: Long) {
+    override fun tryAgain() {
         navController?.popBackStack()
     }
 

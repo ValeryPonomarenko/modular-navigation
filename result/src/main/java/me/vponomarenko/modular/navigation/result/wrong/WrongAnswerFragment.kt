@@ -27,7 +27,7 @@ class WrongAnswerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         button_try_again.setOnClickListener {
-            navigation.tryAgain(0)
+            navigation.tryAgain()
         }
     }
 }
