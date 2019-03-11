@@ -1,4 +1,5 @@
 # Navigation in Multi-Module Projects
+[![Android Weekly]( https://img.shields.io/badge/Android%20Weekly-%23348-blue.svg )]( http://androidweekly.net/issues/issue-348)
 
 This is an example of how to implement navigation in a multi-module project.
 
