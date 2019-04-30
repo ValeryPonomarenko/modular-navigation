@@ -7,4 +7,5 @@ This is an example of how to implement navigation in a multi-module project.
 
 # Links
 [Navigation in Multi-Modules Projects](https://vponomarenko.me/article/2019/04/30/navigation-in-multi-modules-projects.html)
+
 [Navigation in Multi-Module Projects - ProAndroidDev](https://medium.com/p/navigation-in-multi-module-projects-9a5c53ad219)
