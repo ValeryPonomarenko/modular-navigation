@@ -1,1 +1,1 @@
-include ':app', ':questions', ':question', ':result', ':leaderboard'
+include ':app', ':questions', ':question', ':result', ':leaderboard', ':leaderboard_api'
