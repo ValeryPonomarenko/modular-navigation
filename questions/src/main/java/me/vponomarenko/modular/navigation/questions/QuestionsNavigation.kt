@@ -8,4 +8,5 @@ package me.vponomarenko.modular.navigation.questions
 
 interface QuestionsNavigation {
     fun openQuestion(questionId: Long)
+    fun openLeaderboard()
 }

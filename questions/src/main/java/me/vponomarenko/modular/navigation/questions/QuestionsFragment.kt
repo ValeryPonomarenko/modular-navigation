@@ -34,5 +34,8 @@ class QuestionsFragment : Fragment() {
         button_third_question.setOnClickListener {
             navigation.openQuestion(3)
         }
+        button_leaderboard.setOnClickListener {
+            navigation.openLeaderboard()
+        }
     }
 }

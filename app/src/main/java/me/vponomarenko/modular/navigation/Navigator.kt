@@ -24,6 +24,10 @@ class Navigator : QuestionsNavigation, QuestionNavigation, RightAnswerNavigation
         )
     }
 
+    override fun openLeaderboard() {
+        navController?.navigate(R.id.action_questionsFragment_to_leaderboardFeatureFragment)
+    }
+
     override fun openWrongAnswer() {
         navController?.navigate(R.id.action_questionFragment_to_wrongAnswerFragment)
     }

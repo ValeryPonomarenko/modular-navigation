@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_questionsFragment_to_questionFragment"
             app:destination="@id/questionFragment" />
+        <action
+            android:id="@+id/action_questionsFragment_to_leaderboardFeatureFragment"
+            app:destination="@id/leaderboardFeatureFragment" />
     </fragment>
     <fragment
         android:id="@+id/questionFragment"
@@ -32,4 +35,8 @@
         android:id="@+id/rightAnswerFragment"
         android:name="me.vponomarenko.modular.navigation.result.right.RightAnswerFragment"
         android:label="RightAnswerFragment" />
+    <fragment
+        android:id="@+id/leaderboardFeatureFragment"
+        android:name="me.vponomarenko.modular.navigation.LeaderboardFeatureFragment"
+        android:label="LeaderboardFeatureFragment" />
 </navigation>
