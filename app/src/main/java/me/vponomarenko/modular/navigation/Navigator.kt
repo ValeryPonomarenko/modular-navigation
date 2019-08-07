@@ -1,6 +1,7 @@
 package me.vponomarenko.modular.navigation
 
 import androidx.navigation.NavController
+import me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardNavigation
 import me.vponomarenko.modular.navigation.question.QuestionFragment
 import me.vponomarenko.modular.navigation.question.QuestionNavigation
 import me.vponomarenko.modular.navigation.questions.QuestionsNavigation
@@ -13,7 +14,8 @@ import me.vponomarenko.modular.navigation.result.wrong.WrongAnswerNavigation
  * LinkedIn: https://www.linkedin.com/in/ponomarenkovalery
  */
 
-class Navigator : QuestionsNavigation, QuestionNavigation, RightAnswerNavigation, WrongAnswerNavigation {
+class Navigator : QuestionsNavigation, QuestionNavigation, RightAnswerNavigation, WrongAnswerNavigation,
+    LeaderboardNavigation {
 
     private var navController: NavController? = null
 
