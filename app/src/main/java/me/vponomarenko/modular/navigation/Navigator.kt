@@ -1,6 +1,5 @@
 package me.vponomarenko.modular.navigation
 
-import androidx.navigation.NavController
 import me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardNavigation
 import me.vponomarenko.modular.navigation.question.QuestionFragment
 import me.vponomarenko.modular.navigation.question.QuestionNavigation
@@ -14,10 +13,9 @@ import me.vponomarenko.modular.navigation.result.wrong.WrongAnswerNavigation
  * LinkedIn: https://www.linkedin.com/in/ponomarenkovalery
  */
 
-class Navigator : QuestionsNavigation, QuestionNavigation, RightAnswerNavigation, WrongAnswerNavigation,
+internal class Navigator : BaseNavigator(), QuestionsNavigation, QuestionNavigation, RightAnswerNavigation,
+    WrongAnswerNavigation,
     LeaderboardNavigation {
-
-    private var navController: NavController? = null
 
     override fun openQuestion(questionId: Long) {
         navController?.navigate(
@@ -44,13 +42,5 @@ class Navigator : QuestionsNavigation, QuestionNavigation, RightAnswerNavigation
 
     override fun tryAgain() {
         navController?.popBackStack()
-    }
-
-    fun bind(navController: NavController) {
-        this.navController = navController
-    }
-
-    fun unbind() {
-        navController = null
     }
 }

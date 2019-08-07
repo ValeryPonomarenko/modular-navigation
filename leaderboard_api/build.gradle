@@ -23,6 +23,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha11'
     implementation "com.github.valeryponomarenko.componentsmanager:androidx:2.0.1"
     implementation 'com.google.android.play:core:1.3.1'
 

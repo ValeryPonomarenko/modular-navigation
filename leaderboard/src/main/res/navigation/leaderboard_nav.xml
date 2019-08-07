@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/leaderboard_nav"
+    app:startDestination="@id/leaderboardFragment">
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="me.vponomarenko.modular.navigation.leaderboard.LeaderboardFragment"
+        android:label="LeaderboardFragment" >
+        <action
+            android:id="@+id/action_leaderboardFragment_to_leaderFragment"
+            app:destination="@id/leaderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderFragment"
+        android:name="me.vponomarenko.modular.navigation.leaderboard.LeaderFragment"
+        android:label="LeaderFragment" />
+</navigation>
