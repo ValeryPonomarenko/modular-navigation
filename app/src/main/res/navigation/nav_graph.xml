@@ -38,5 +38,9 @@
     <fragment
         android:id="@+id/leaderboardFeatureFragment"
         android:name="me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardFeatureFragment"
-        android:label="LeaderboardFeatureFragment" />
+        android:label="LeaderboardFeatureFragment" >
+        <action
+            android:id="@+id/action_leaderboardFeatureFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
 </navigation>

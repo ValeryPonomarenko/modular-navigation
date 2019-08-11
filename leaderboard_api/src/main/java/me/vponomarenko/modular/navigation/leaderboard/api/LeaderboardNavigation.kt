@@ -7,4 +7,5 @@ package me.vponomarenko.modular.navigation.leaderboard.api
  */
 
 interface LeaderboardNavigation {
+    fun openQuestionPreview(questionId: Long)
 }

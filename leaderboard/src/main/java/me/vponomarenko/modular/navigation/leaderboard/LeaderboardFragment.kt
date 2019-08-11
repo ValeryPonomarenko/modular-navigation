@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 /**
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 class LeaderboardFragment : Fragment() {
 
-    private val navigation: Navigator
+    private val navigator: Navigator
         get() = LeaderboardModuleBinder.navigator
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
@@ -24,7 +25,17 @@ class LeaderboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         button_john.setOnClickListener {
-            navigation.openLeader("John Doe")
+            navigator.openLeader("John Doe")
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        navigator.bind(findNavController())
+    }
+
+    override fun onPause() {
+        super.onPause()
+        navigator.unbind()
     }
 }

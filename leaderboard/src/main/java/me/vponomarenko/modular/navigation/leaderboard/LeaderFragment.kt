@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_leader.*
+import me.vponomarenko.injectionmanager.x.XInjectionManager
+import me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardNavigation
 
 /**
  * Author: Valery Ponomarenko
@@ -24,6 +26,10 @@ class LeaderFragment : Fragment() {
             }
     }
 
+    private val leaderboardNavigation by lazy {
+        XInjectionManager.findComponent<LeaderboardNavigation>()
+    }
+
     private val leaderName by lazy {
         arguments?.getString(EXTRA_QUESTION_ID) ?: throw IllegalStateException("no name")
     }
@@ -34,5 +40,8 @@ class LeaderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         text_leader_name.text = leaderName
+        text_leader_name.setOnClickListener {
+            leaderboardNavigation.openQuestionPreview(1)
+        }
     }
 }

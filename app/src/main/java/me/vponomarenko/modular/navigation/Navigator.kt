@@ -20,7 +20,7 @@ internal class Navigator : BaseNavigator(), QuestionsNavigation, QuestionNavigat
     override fun openQuestion(questionId: Long) {
         navController?.navigate(
             R.id.action_questionsFragment_to_questionFragment,
-            QuestionFragment.createBundle(questionId)
+            QuestionFragment.createBundle(questionId, false)
         )
     }
 
@@ -42,5 +42,12 @@ internal class Navigator : BaseNavigator(), QuestionsNavigation, QuestionNavigat
 
     override fun tryAgain() {
         navController?.popBackStack()
+    }
+
+    override fun openQuestionPreview(questionId: Long) {
+        navController?.navigate(
+            R.id.action_leaderboardFeatureFragment_to_questionFragment,
+            QuestionFragment.createBundle(questionId, true)
+        )
     }
 }
