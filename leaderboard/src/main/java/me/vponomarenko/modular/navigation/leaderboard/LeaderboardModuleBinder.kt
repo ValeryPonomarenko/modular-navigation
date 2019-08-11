@@ -1,7 +1,8 @@
 package me.vponomarenko.modular.navigation.leaderboard
 
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import me.vponomarenko.modular.navigation.leaderboard.api.NavHostProvider
+import me.vponomarenko.modular.navigation.leaderboard.api.ModuleBinder
 
 /**
  * Author: Valery Ponomarenko
@@ -10,6 +11,15 @@ import me.vponomarenko.modular.navigation.leaderboard.api.NavHostProvider
  */
 
 @Suppress("unused")
-class NavProvider : NavHostProvider {
+class LeaderboardModuleBinder : ModuleBinder {
+
+    companion object {
+        val navigator = Navigator()
+    }
+
     override fun provideNavHost(): NavHostFragment = NavHostFragment.create(R.navigation.leaderboard_nav)
+
+    override fun setNavigatorHolder(navController: NavController) {
+        navigator.bind(navController)
+    }
 }

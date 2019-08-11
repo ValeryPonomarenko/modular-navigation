@@ -19,5 +19,4 @@ abstract class BaseNavigator {
     fun unbind() {
         navController = null
     }
-
 }
