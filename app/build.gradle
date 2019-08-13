@@ -32,10 +32,10 @@ dependencies {
     implementation project(':result')
     implementation project(':leaderboard_api')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
-    implementation 'com.github.valeryponomarenko.componentsmanager:androidx:2.0.1'
-    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha11'
+    implementation deps.kotlin
+    implementation deps.appCompat
+    implementation deps.componentsManager
+    implementation deps.navigation
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
