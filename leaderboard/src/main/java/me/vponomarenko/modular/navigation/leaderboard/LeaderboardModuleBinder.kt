@@ -16,5 +16,9 @@ class LeaderboardModuleBinder : ModuleBinder {
         val navigator = Navigator()
     }
 
-    override fun provideNavHost(): NavHostFragment = NavHostFragment.create(R.navigation.leaderboard_nav)
+    private val navHost by lazy {
+        NavHostFragment.create(R.navigation.leaderboard_nav)
+    }
+
+    override fun provideNavHost(): NavHostFragment = navHost
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 class LeaderboardFeatureFragment : Fragment() {
 
@@ -12,8 +13,7 @@ class LeaderboardFeatureFragment : Fragment() {
         private const val MODULE_BINDER = "me.vponomarenko.modular.navigation.leaderboard.LeaderboardModuleBinder"
     }
 
-    private val binder
-        get() = Class.forName(MODULE_BINDER).newInstance() as ModuleBinder
+    private val binder by lazy { Class.forName(MODULE_BINDER).newInstance() as ModuleBinder }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_feature, container, false)
@@ -23,8 +23,7 @@ class LeaderboardFeatureFragment : Fragment() {
 
         if (savedInstanceState == null) {
             val navHost = binder.provideNavHost()
-            val fragmentManager = fragmentManager ?: throw IllegalStateException("FM cannot be null")
-            fragmentManager
+            childFragmentManager
                 .beginTransaction()
                 .replace(R.id.nav_host_feature_fragment, navHost)
                 .setPrimaryNavigationFragment(navHost)
@@ -32,13 +31,8 @@ class LeaderboardFeatureFragment : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-//        binder.bindNavController(binder.provideNavHost().findNavController())
-    }
-
-    override fun onPause() {
-        super.onPause()
-//        binder.unbindNavController()
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBundle("123", findNavController().saveState())
     }
 }
