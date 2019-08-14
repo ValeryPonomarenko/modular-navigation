@@ -57,8 +57,4 @@ class QuestionFragment : Fragment() {
             }
         }
     }
-
-    override fun onResume() {
-        super.onResume()
-    }
 }

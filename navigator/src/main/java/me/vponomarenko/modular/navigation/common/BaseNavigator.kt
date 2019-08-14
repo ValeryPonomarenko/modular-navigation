@@ -1,4 +1,4 @@
-package me.vponomarenko.modular.navigation
+package me.vponomarenko.modular.navigation.common
 
 import androidx.navigation.NavController
 

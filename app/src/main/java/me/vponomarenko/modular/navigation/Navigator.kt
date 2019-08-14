@@ -1,5 +1,6 @@
 package me.vponomarenko.modular.navigation
 
+import me.vponomarenko.modular.navigation.common.BaseNavigator
 import me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardNavigation
 import me.vponomarenko.modular.navigation.question.QuestionFragment
 import me.vponomarenko.modular.navigation.question.QuestionNavigation

@@ -19,6 +19,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':navigator')
 
     implementation deps.kotlin
     implementation deps.appCompat

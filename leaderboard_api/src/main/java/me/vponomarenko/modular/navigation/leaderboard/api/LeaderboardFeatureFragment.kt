@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 
 class LeaderboardFeatureFragment : Fragment() {
 
@@ -31,8 +30,13 @@ class LeaderboardFeatureFragment : Fragment() {
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putBundle("123", findNavController().saveState())
+    override fun onResume() {
+        super.onResume()
+        binder.provideNavigator().bind(binder.provideNavHost().navController)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binder.provideNavigator().unbind()
     }
 }

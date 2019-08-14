@@ -1,6 +1,7 @@
 package me.vponomarenko.modular.navigation.leaderboard
 
 import androidx.navigation.fragment.NavHostFragment
+import me.vponomarenko.modular.navigation.common.BaseNavigator
 import me.vponomarenko.modular.navigation.leaderboard.api.ModuleBinder
 
 /**
@@ -13,7 +14,7 @@ import me.vponomarenko.modular.navigation.leaderboard.api.ModuleBinder
 class LeaderboardModuleBinder : ModuleBinder {
 
     companion object {
-        val navigator = Navigator()
+        internal val navigator = Navigator()
     }
 
     private val navHost by lazy {
@@ -21,4 +22,6 @@ class LeaderboardModuleBinder : ModuleBinder {
     }
 
     override fun provideNavHost(): NavHostFragment = navHost
+
+    override fun provideNavigator(): BaseNavigator = navigator
 }

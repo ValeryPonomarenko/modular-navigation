@@ -1,6 +1,7 @@
 package me.vponomarenko.modular.navigation.leaderboard.api
 
 import androidx.navigation.fragment.NavHostFragment
+import me.vponomarenko.modular.navigation.common.BaseNavigator
 
 /**
  * Author: Valery Ponomarenko
@@ -10,4 +11,5 @@ import androidx.navigation.fragment.NavHostFragment
 
 interface ModuleBinder {
     fun provideNavHost(): NavHostFragment
+    fun provideNavigator(): BaseNavigator
 }
