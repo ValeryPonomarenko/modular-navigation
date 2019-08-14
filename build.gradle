@@ -27,4 +27,5 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+apply from: 'config.gradle'
 apply from: 'dependencies.gradle'

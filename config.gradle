@@ -1,0 +1,23 @@
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            android {
+                compileSdkVersion versions.targetSdkVersion
+                defaultConfig {
+                    minSdkVersion versions.minSdkVersion
+                    targetSdkVersion versions.targetSdkVersion
+                }
+            }
+
+            dependencies {
+                implementation fileTree(dir: 'libs', include: ['*.jar'])
+                implementation deps.kotlin
+            }
+        }
+    }
+}
+
+ext.versions = [
+        targetSdkVersion: 28,
+        minSdkVersion   : 19
+]
