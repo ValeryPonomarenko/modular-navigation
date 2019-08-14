@@ -1,6 +1,6 @@
 package me.vponomarenko.modular.navigation.leaderboard.api
 
-import androidx.navigation.fragment.NavHostFragment
+import androidx.fragment.app.Fragment
 import me.vponomarenko.modular.navigation.common.BaseNavigator
 
 /**
@@ -10,6 +10,6 @@ import me.vponomarenko.modular.navigation.common.BaseNavigator
  */
 
 interface ModuleBinder {
-    fun provideNavHost(): NavHostFragment
+    fun provideRootFragment(): Fragment
     fun provideNavigator(): BaseNavigator
 }

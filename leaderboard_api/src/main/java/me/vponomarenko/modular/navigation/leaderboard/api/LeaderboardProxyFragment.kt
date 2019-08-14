@@ -5,34 +5,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import me.vponomarenko.injectionmanager.IHasComponent
+import me.vponomarenko.injectionmanager.x.XInjectionManager
 
-class LeaderboardFeatureFragment : Fragment() {
+class LeaderboardProxyFragment : Fragment(), IHasComponent<ModuleBinder> by BinderInitializer() {
 
-    companion object {
-        private const val MODULE_BINDER = "me.vponomarenko.modular.navigation.leaderboard.LeaderboardModuleBinder"
-    }
-
-    private val binder by lazy { Class.forName(MODULE_BINDER).newInstance() as ModuleBinder }
+    private val binder by lazy { XInjectionManager.bindComponent(this) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.fragment_feature, container, false)
+        inflater.inflate(R.layout.fragment_leaderboard_proxy, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         if (savedInstanceState == null) {
-            val navHost = binder.provideNavHost()
+            val root = binder.provideRootFragment()
             childFragmentManager
                 .beginTransaction()
-                .replace(R.id.nav_host_feature_fragment, navHost)
-                .setPrimaryNavigationFragment(navHost)
+                .replace(R.id.leaderboardFeatureContainer, root)
+                .setPrimaryNavigationFragment(root)
                 .commit()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        binder.provideNavigator().bind(binder.provideNavHost().navController)
+        binder.provideNavigator().bind(binder.provideRootFragment().findNavController())
     }
 
     override fun onPause() {

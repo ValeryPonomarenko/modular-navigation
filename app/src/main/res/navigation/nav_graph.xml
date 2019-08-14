@@ -37,7 +37,7 @@
         android:label="RightAnswerFragment" />
     <fragment
         android:id="@+id/leaderboardFeatureFragment"
-        android:name="me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardFeatureFragment"
+        android:name="me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardProxyFragment"
         android:label="LeaderboardFeatureFragment" >
         <action
             android:id="@+id/action_leaderboardFeatureFragment_to_questionFragment"

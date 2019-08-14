@@ -13,6 +13,7 @@ import me.vponomarenko.injectionmanager.x.XInjectionManager
 class NavApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        XInjectionManager.init(this)
         XInjectionManager.bindComponentToCustomLifecycle(object : IHasComponent<Navigator> {
             override fun getComponent(): Navigator = Navigator()
         })
