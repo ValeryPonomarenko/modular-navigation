@@ -2,7 +2,6 @@ package me.vponomarenko.modular.navigation.leaderboard
 
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import me.vponomarenko.modular.navigation.common.BaseNavigator
 import me.vponomarenko.modular.navigation.leaderboard.api.ModuleBinder
 
 /**
@@ -23,6 +22,4 @@ class LeaderboardModuleBinder : ModuleBinder {
     }
 
     override fun provideRootFragment(): Fragment = navHost
-
-    override fun provideNavigator(): BaseNavigator = navigator
 }

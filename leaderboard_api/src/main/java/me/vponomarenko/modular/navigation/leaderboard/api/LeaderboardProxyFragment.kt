@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import me.vponomarenko.injectionmanager.IHasComponent
 import me.vponomarenko.injectionmanager.x.XInjectionManager
 
@@ -27,15 +26,5 @@ class LeaderboardProxyFragment : Fragment(), IHasComponent<ModuleBinder> by Bind
                 .setPrimaryNavigationFragment(root)
                 .commit()
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        binder.provideNavigator().bind(binder.provideRootFragment().findNavController())
-    }
-
-    override fun onPause() {
-        super.onPause()
-        binder.provideNavigator().unbind()
     }
 }
