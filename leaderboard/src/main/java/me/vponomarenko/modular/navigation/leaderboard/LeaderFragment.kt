@@ -40,7 +40,8 @@ class LeaderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         text_leader_name.text = leaderName
-        text_leader_name.setOnClickListener {
+        button_question.text = getString(R.string.question, 1)
+        button_question.setOnClickListener {
             leaderboardNavigation.openQuestionPreview(1)
         }
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,6 +8,24 @@
         android:id="@+id/text_leader_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:text="Name Name" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/label_guessed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_leader_name"
+        android:padding="8dp"
+        android:text="@string/the_user_guessed" />
+
+    <Button
+        android:id="@+id/button_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_guessed"
+        tools:text="Question #1" />
+
+</RelativeLayout>
